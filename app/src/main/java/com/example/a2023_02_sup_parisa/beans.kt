@@ -12,12 +12,14 @@ fun main() {
 //    var student = StudentBean("Toto")
 //    student.note++
 
-    val plane = PlaneBean("Toto")
-    println("${plane.name} : ${plane.id}")
-    plane.name = "bob"
-    println("${plane.name} : ${plane.id}")
-    //L'id doit avoir changé
+//    val plane = PlaneBean("Toto")
+//    println("${plane.name} : ${plane.id}")
+//    plane.name = "bob"
+//    println("${plane.name} : ${plane.id}")
+//    //L'id doit avoir changé
 
+     var p =  PlaneBean("toto")
+     var p2 =  PlaneBean("toto")
 }
 
 class PlaneBean (name:String){

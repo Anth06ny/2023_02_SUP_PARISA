@@ -18,22 +18,64 @@ fun main() {
 //    println("${plane.name} : ${plane.id}")
 //    //L'id doit avoir changé
 
-     var p =  PlaneBean("toto")
-     var p2 =  PlaneBean("toto")
+    val randomName = RandomName()
+    randomName.add("bobby")
+    repeat(10) {
+        println(randomName.next() + " ")
+    }
 }
 
-class PlaneBean (name:String){
+class RandomName {
+    private val list = arrayListOf("Toto", "Tata", "Titi")
+
+    private var oldValue = ""
+
+    fun next2() = Pair(nextDiff(), nextDiff())
+
+    fun nextDiffV2() = list.filter { it != oldValue }.random().also { oldValue = it }
+    fun nextDiff(): String {
+        var value = next()
+        while (value == oldValue) {
+            value = next()
+        }
+        oldValue = value
+        return value
+    }
+
+    fun add(name: String?) =
+        if (!name.isNullOrBlank() && name !in list)
+            list.add(name)
+        //list += name
+        else false
+
+    fun next() = list.random()
+
+
+}
+
+/* -------------------------------- */
+// API Weather
+/* -------------------------------- */
+data class WeatherBean(var main: TempBean, var wind: WindBean, var name: String, var toto: String)
+data class TempBean(var temp: Double)
+data class WindBean(var speed: Double)
+
+/* -------------------------------- */
+// Exo
+/* -------------------------------- */
+
+class PlaneBean(name: String) {
     var id = name.hashCode()
         private set
 
     var name = name
         set(value) {
-            field =value
+            field = value
             id = name.hashCode()
         }
 }
 
-class UserBean(val name:String, var note:Int = 0){
+class UserBean(val name: String, var note: Int = 0) {
     val id = name.hashCode()
 }
 

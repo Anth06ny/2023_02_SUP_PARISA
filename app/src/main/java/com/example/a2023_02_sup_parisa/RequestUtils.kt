@@ -18,8 +18,6 @@ object RequestUtils {
         return weather
     }
 
-
-
     //Méthode qui prend en entrée une url, execute la requête
     //Retourne le code HTML/JSON reçu
     fun sendGet(url: String): String {

@@ -1,13 +1,15 @@
-package com.example.a2023_02_sup_parisa
+package com.example.a2023_02_sup_parisa.model
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
+
 object RequestUtils {
 
     val client = OkHttpClient()
     val gson = Gson()
+
 
     fun loadWeather(city:String): WeatherBean {
 

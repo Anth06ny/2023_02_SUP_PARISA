@@ -1,4 +1,4 @@
-package com.example.a2023_02_sup_parisa
+package com.example.a2023_02_sup_parisa.exokotlin
 
 const val PRIX_CROI = 0.95
 const val PRIX_SAND = 4

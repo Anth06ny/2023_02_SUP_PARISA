@@ -1,6 +1,6 @@
-package com.example.a2023_02_sup_parisa
+package com.example.a2023_02_sup_parisa.exokotlin
 
-import kotlin.concurrent.thread
+import com.example.a2023_02_sup_parisa.model.UserBean
 
 fun main() {
     exo4()
@@ -51,10 +51,10 @@ fun exo4(){
 
 fun exo2(){
 
-    var compareUsersByName :(UserBean, UserBean)->UserBean =
+    var compareUsersByName :(UserBean, UserBean)-> UserBean =
         {u1, u2 -> if( u1.name.lowercase() >= u2.name.lowercase()) u1 else u2 }
 
-    var comparUsersByNote :(UserBean, UserBean)->UserBean =
+    var comparUsersByNote :(UserBean, UserBean)-> UserBean =
         {u1, u2 -> if( u1.note >= u2.note) u1 else u2 }
 
     val u1 = UserBean("Bob", 19)
@@ -65,7 +65,7 @@ fun exo2(){
 
 }
 
-inline fun compareUsers(block:(UserBean, UserBean)->UserBean, u1:UserBean, u2:UserBean, u3:UserBean)= block(block(u1, u2), u3)
+inline fun compareUsers(block:(UserBean, UserBean)-> UserBean, u1: UserBean, u2: UserBean, u3: UserBean)= block(block(u1, u2), u3)
 
 fun exo1() {
     val lower : (String)->Unit = { it:String -> println(it.lowercase())}

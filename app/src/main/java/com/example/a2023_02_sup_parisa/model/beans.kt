@@ -1,4 +1,4 @@
-package com.example.a2023_02_sup_parisa
+package com.example.a2023_02_sup_parisa.model
 
 import java.util.*
 
@@ -56,8 +56,8 @@ class RandomName {
 /* -------------------------------- */
 // API Weather
 /* -------------------------------- */
-data class WeatherBean(var main: TempBean, var wind: WindBean, var name: String, var toto: String)
-data class TempBean(var temp: Double)
+data class WeatherBean(var main: TempBean, var wind: WindBean, var name: String)
+data class TempBean(var temp: Double, var temp_min:Double, var temp_max:Double)
 data class WindBean(var speed: Double)
 
 /* -------------------------------- */

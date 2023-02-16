@@ -1,6 +1,4 @@
-package com.example.a2023_02_sup_parisa
-
-import kotlin.concurrent.thread
+package com.example.a2023_02_sup_parisa.exokotlin
 
 fun main() {
 //    println("HelloWorld")

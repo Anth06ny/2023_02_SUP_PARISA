@@ -1,4 +1,6 @@
-package com.example.a2023_02_sup_parisa
+package com.example.a2023_02_sup_parisa.exokotlin
+
+import com.example.a2023_02_sup_parisa.model.RequestUtils
 
 fun main() {
     //val html = RequestUtils.sendGet("https://www.google.fr")

@@ -4,14 +4,17 @@ import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import okhttp3.Request
 
+const val POKEMON_API_URL = "https://www.amonteiro.fr/api/pokemonN1"
 
 object RequestUtils {
 
     val client = OkHttpClient()
     val gson = Gson()
 
+    fun loadPokemon() = gson.fromJson(sendGet(POKEMON_API_URL), PokemonBean::class.java)
 
-    fun loadWeather(city:String): WeatherBean {
+
+    fun loadWeather(city: String): WeatherBean {
 
         var json = sendGet("https://api.openweathermap.org/data/2.5/weather?q=$city&appid=b80967f0a6bd10d23e44848547b26550&units=metric&lang=fr")
 
@@ -19,6 +22,7 @@ object RequestUtils {
 
         return weather
     }
+
 
     //Méthode qui prend en entrée une url, execute la requête
     //Retourne le code HTML/JSON reçu

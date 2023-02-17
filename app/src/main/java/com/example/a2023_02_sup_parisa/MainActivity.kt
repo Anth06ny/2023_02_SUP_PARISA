@@ -9,8 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.a2023_02_sup_parisa.databinding.ActivityMainBinding
 
 const val MENU_ITEM_WEATHER = 1
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+const val MENU_ITEM_POKEMON = 2
 
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
     //Créé une instance du XML
@@ -22,12 +23,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //affichage
         setContentView(binding.root)
 
+
+
         binding.btValidate.setOnClickListener {
 
-            if(binding.rbLike.isChecked) {
+            if (binding.rbLike.isChecked) {
                 binding.et.setText(binding.rbLike.text)
             }
-            else if(binding.rbDislike.isChecked) {
+            else if (binding.rbDislike.isChecked) {
                 binding.et.setText(binding.rbDislike.text)
             }
 
@@ -49,17 +52,27 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     //Callback de création du menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menu.add(0,MENU_ITEM_WEATHER,0,"Météo")
+        menu.add(0, MENU_ITEM_WEATHER, 0, "Météo")
+        menu.add(0, MENU_ITEM_POKEMON, 0, "Pokemon")
 
         return super.onCreateOptionsMenu(menu)
     }
 
     //Callback des clicks sur les menus
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == MENU_ITEM_WEATHER){
+        if (item.itemId == MENU_ITEM_WEATHER) {
             val intent = Intent(this, WeatherActivity::class.java)
             //Exo plus rapides passage paramètre
-            intent.putExtra("toto", binding.et.text.toString())
+//            intent.putExtra("toto", binding.et.text.toString())
+//            intent.putExtra("toto", WindBean(5.0))
+            //fin Exo plus rapides passage paramètre
+            startActivity(intent)
+        }
+        else if (item.itemId == MENU_ITEM_POKEMON) {
+            val intent = Intent(this, PokemonActivity::class.java)
+            //Exo plus rapides passage paramètre
+//            intent.putExtra("toto", binding.et.text.toString())
+//            intent.putExtra("toto", WindBean(5.0))
             //fin Exo plus rapides passage paramètre
             startActivity(intent)
         }

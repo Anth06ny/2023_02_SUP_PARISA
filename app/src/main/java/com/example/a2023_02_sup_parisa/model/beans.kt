@@ -54,11 +54,19 @@ class RandomName {
 }
 
 /* -------------------------------- */
+// Pokemon
+/* -------------------------------- */
+data class PokemonBean(
+    val name: String,
+    val type: String
+)
+
+/* -------------------------------- */
 // API Weather
 /* -------------------------------- */
 data class WeatherBean(var main: TempBean, var wind: WindBean, var name: String, var weather:List<DescriptionBean>?)
 data class TempBean(var temp: Double, var temp_min:Double, var temp_max:Double)
-data class WindBean(var speed: Double)
+data class WindBean(var speed: Double) : java.io.Serializable
 
 data class DescriptionBean(var description:String, var icon:String)
 
